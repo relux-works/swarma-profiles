@@ -16,7 +16,7 @@ This package ships no runtime hooks. Memory hooks are delivered by the operator,
 Installing the profile is only the first step. An agent can write to memory once all of these are done:
 
 1. The `memory` CLI is available from the profile.
-2. The agent has its own memory home and signing key. Parallel sessions of the same agent use separate homes.
+2. The agent has its own memory home and signing key. A home belongs to one running process and is never shared. A separate home does not allow two concurrent sessions of the same identity; the identity's one-live rule governs that.
 3. The owner of each space has registered the agent's key and granted it reader and writer roles on its agent space and the project space, and reader on the platform space.
 4. The agent has added each space with the genesis digest it received over a trusted channel.
 5. `memory sync` and `memory check` report zero diagnostics.
