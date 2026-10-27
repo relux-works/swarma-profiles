@@ -24,12 +24,12 @@ When something in your agent space turns out to matter to others, promote it to 
 
 - Right after a decision, a finding, a rejected hypothesis or a status change. Do not save it for the end of the task: the end may never come in this session.
 - Status is one record per subject. Revise it in place (`--relation replace` with the version you read). Do not add a new record for each update.
-- Memory 0.1 does not accept source flags on `revise`. It refuses them with `feature_not_enabled`, which is the intended gate, not an error to work around. On 0.1, revise without source flags and name the source in the content. A plain revision is still a valid revision. Attributed revise arrives in memory 0.2.
+- Attribute revisions the same way as new records: `revise` with `--relation replace` or `correct` takes the source flags. If your installed `memory` refuses them with `feature_not_enabled`, it is an older 0.1 build. Revise without source flags and name the source in the content; do not work around the gate.
 - At the end of a task, write what it decided or learned, if you have not already.
 
 ## How to write
 
-- Attribute every new record (`add`). Use the source flags for the session or message it came from, and keep a short exact excerpt when it helps.
+- Attribute every record. Use the source flags for the session or message it came from, and keep a short exact excerpt when it helps.
 - Use a short readable idempotency key, such as `<topic>-1`.
 - Keep the content short and specific: what, why, and where the evidence lives.
 - Never record secrets, credentials, personal data about people, private inputs or raw tool output. The secret scanner refuses obvious cases. It does not prove that anything is safe.
