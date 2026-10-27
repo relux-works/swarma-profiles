@@ -14,7 +14,7 @@
     "skills": {
       "memory": {
         "git": "https://github.com/relux-works/swarma-memory.git",
-        "range": "^0.2.1",
+        "range": "^0.2.2",
         "mode": "full"
       }
     }
